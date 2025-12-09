@@ -14,18 +14,37 @@ public class ProgramMagangCaseMethod {
         dataMahasiswa[jumlahData][2] = sc.nextLine();
         System.out.print("Perusahaan Tujuan Magang : ");
         dataMahasiswa[jumlahData][3] = sc.nextLine();
-        System.out.print("Semester Pengambilan Magang (6 atau 7) : ");
-        dataMahasiswa[jumlahData][4] = sc.nextLine();
-        System.out.print("Status Magang (Diterima/Menunggu/Ditolak) : ");
-        dataMahasiswa[jumlahData][5] = sc.nextLine();
+        while(true) {
+            System.out.print("Semester Pengambilan Magang (6 atau 7) : ");
+            String semester = sc.nextLine();
+
+            if (semester.equals("6") || semester.equals("7")) {
+                dataMahasiswa[jumlahData][4] = semester;
+                break;
+            } else {
+                System.out.println("Semester Tidak Valid !!!, Silahkan Input Ulang Semester 6 atau 7");
+            }
+        }
+        
+        while (true) { 
+            System.out.print("Status Magang (Diterima/Menunggu/Ditolak) : ");
+            String status = sc.nextLine();
+
+            if(status.equals("Diterima") || status.equals("Menunggu") || status.equals("Ditolak")) {
+                dataMahasiswa[jumlahData][5] = status;
+                break;
+            } else {
+                System.out.println("Input Status Magang Tidak Valid, Ulangi Input Ulang !!!");
+            }
+        }
         jumlahData++;
         System.out.println("Data Pendaftaran Magang Berhasil Ditambahkan. Total Pendaftar : " + jumlahData);
     }
 
     static void tampilSemuaPendaftar() {
-        System.out.printf("%-10s %-20s %-20s %-25s %-25s %-10s %-15s \n", "Nama", "NIM", "Program Studi", "Perusahaan", "Semester", "Status");
+        System.out.printf("%-10s %-20s %-20s %-25s %-25s %-10s %-15s \n", "No", "Nama", "NIM", "Program Studi", "Perusahaan", "Semester", "Status");
         for(int i = 0; i < jumlahData; i++) {
-            System.out.printf("%-10s %-20s %-20s %-25s %-25s %-10s %-15s \\n", (i + 1), dataMahasiswa[i][0], dataMahasiswa[i][1], dataMahasiswa[i][2], dataMahasiswa[i][3], dataMahasiswa[i][4], dataMahasiswa[i][5]);
+            System.out.printf("%-10s %-20s %-20s %-25s %-25s %-10s %-15s \n", (i + 1), dataMahasiswa[i][0], dataMahasiswa[i][1], dataMahasiswa[i][2], dataMahasiswa[i][3], dataMahasiswa[i][4], dataMahasiswa[i][5]);
         }
     }
 }
