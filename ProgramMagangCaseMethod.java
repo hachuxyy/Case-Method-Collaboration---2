@@ -5,7 +5,7 @@ public class ProgramMagangCaseMethod {
     static String[][] dataMahasiswa = new String[50][6];
     static int jumlahData = 0;
 
-    static void tambahDataMagang() {
+    static void tambahDataMagang() { // Function Menu 1 Tambah Data Mahasiswa Magang
         System.out.print("Nama Mahasiswa : ");
         dataMahasiswa[jumlahData][0] = sc.nextLine();
         System.out.print("NIM : ");
@@ -41,10 +41,30 @@ public class ProgramMagangCaseMethod {
         System.out.println("Data Pendaftaran Magang Berhasil Ditambahkan. Total Pendaftar : " + jumlahData);
     }
 
-    static void tampilSemuaPendaftar() {
+    static void tampilSemuaPendaftar() { // Function Menu 2 Untuk Tampilkan Semua Pendaftar Magang
         System.out.printf("%-10s %-20s %-20s %-25s %-25s %-10s %-15s \n", "No", "Nama", "NIM", "Program Studi", "Perusahaan", "Semester", "Status");
         for(int i = 0; i < jumlahData; i++) {
             System.out.printf("%-10s %-20s %-20s %-25s %-25s %-10s %-15s \n", (i + 1), dataMahasiswa[i][0], dataMahasiswa[i][1], dataMahasiswa[i][2], dataMahasiswa[i][3], dataMahasiswa[i][4], dataMahasiswa[i][5]);
+        }
+    }
+
+    public static void main(String[] args) {
+        while (true) { 
+            System.out.println("==== Sistem Pendaftaran Magang Mahasiswa ====");
+            System.out.println("1. Tambah Data Magang");
+            System.out.println("2. Tampilkan Semua Pendaftar Magang");
+            System.out.println("3. Cari Pendaftar berdasarkan Program Studi");
+            System.out.println("4. Hitung Jumlah Pendaftar Untuk Setiap Status");
+            System.out.println("5. Keluar");
+            System.out.print("Pilih Menu (1-5) : ");
+            int pilihMenu = sc.nextInt();
+            sc.nextLine();
+
+            if(pilihMenu == 1) {
+                tambahDataMagang();
+            } else if (pilihMenu == 2) {
+                tampilSemuaPendaftar();
+            }
         }
     }
 }
