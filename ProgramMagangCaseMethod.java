@@ -113,34 +113,5 @@ public class ProgramMagangCaseMethod {
             }
         }
     }
-
-    public static Scanner getSc() {
-        return sc;
-    }
-
-    public static void setSc(Scanner sc) {
-        ProgramMagangCaseMethod.sc = sc;
-    }
-
-    public static String[][] getDataMahasiswa() {
-        return dataMahasiswa;
-    }
-
-    public static void setDataMahasiswa(String[][] dataMahasiswa) {
-        ProgramMagangCaseMethod.dataMahasiswa = dataMahasiswa;
-    }
-
-    public static int getJumlahData() {
-        return jumlahData;
-    }
-
-    public static void setJumlahData(int jumlahData) {
-        ProgramMagangCaseMethod.jumlahData = jumlahData;
-    }
-
-    @Override
-    public String toString() {
-        return "ProgramMagangCaseMethod []";
-    }
 }
 
