@@ -30,7 +30,7 @@ public class ProgramMagangCaseMethod {
             System.out.print("Status Magang (Diterima/Menunggu/Ditolak) : ");
             String status = sc.nextLine();
 
-            if(status.equals("Diterima") || status.equals("Menunggu") || status.equals("Ditolak")) {
+            if(status.equalsIgnoreCase("Diterima") || status.equalsIgnoreCase("Menunggu") || status.equalsIgnoreCase("Ditolak")) {
                 dataMahasiswa[jumlahData][5] = status;
                 break;
             } else {
@@ -39,6 +39,7 @@ public class ProgramMagangCaseMethod {
         }
         jumlahData++;
         System.out.println("Data Pendaftaran Magang Berhasil Ditambahkan. Total Pendaftar : " + jumlahData);
+
     }
 
     static void tampilSemuaPendaftar() { // Function Menu 2 Untuk Tampilkan Semua Pendaftar Magang
@@ -99,18 +100,20 @@ public class ProgramMagangCaseMethod {
             int pilihMenu = sc.nextInt();
             sc.nextLine();
 
-            if(pilihMenu == 1) {
-                tambahDataMagang();
-            } else if (pilihMenu == 2) {
-                tampilSemuaPendaftar();
-            } else if (pilihMenu == 3) {
-                cariPendaftar();
-            } else if (pilihMenu == 4) {
-                hitungJumlahPendaftarPerStatus();
-            } else {
-                System.out.println("Keluar dari program ....");
-                break;
-            }
+                if(pilihMenu == 1) {
+                    tambahDataMagang();
+                } else if (pilihMenu == 2) {
+                    tampilSemuaPendaftar();
+                } else if (pilihMenu == 3) {
+                    cariPendaftar();
+                } else if (pilihMenu == 4) {
+                    hitungJumlahPendaftarPerStatus();
+                } else if (pilihMenu == 5){
+                    System.out.println("Keluar dari program ....");
+                    break;
+                } else {
+                    System.out.println("Menu Tidak tersedia !! Silahkan Input Menu Sesuai Pilihan !!!");
+                }
         }
 
     }
