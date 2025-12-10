@@ -63,6 +63,30 @@ public class ProgramMagangCaseMethod {
             }
         }
     }
+    static void hitungJumlahPendaftarPerStatus() { // Function Menu 4 Untuk Menghitung Jumlah Pendaftar Magang Per Status
+        int diterima = 0;
+        int menunggu = 0;
+        int ditolak = 0;
+        String status;
+
+        for (int i = 0; i < jumlahData; i++) {
+            if (dataMahasiswa[i][5].equalsIgnoreCase("Diterima")){
+                diterima++;
+            } else if (dataMahasiswa[i][5].equalsIgnoreCase("Menunggu")){
+                menunggu++;
+            } else {
+                dataMahasiswa[i][5].equalsIgnoreCase("Ditolak");
+                ditolak++;
+            }
+            
+        }
+
+        System.out.println("Jumlah Pendaftar Magang Berdasarkan Status:");
+        System.out.println("Diterima: " + diterima);
+        System.out.println("Menunggu: " + menunggu);
+        System.out.println("Ditolak: " + ditolak);
+        System.out.println("Total Pendaftar: " + jumlahData);
+    }
 
     public static void main(String[] args) {
         while (true) { 
@@ -82,8 +106,42 @@ public class ProgramMagangCaseMethod {
                 tampilSemuaPendaftar();
             } else if (pilihMenu == 3) {
                 cariPendaftar();
+            } else if (pilihMenu == 4) {
+                hitungJumlahPendaftarPerStatus();
+            } else {
+                System.out.println("Keluar dari program ....");
+                break;
             }
         }
+    }
+
+    public static Scanner getSc() {
+        return sc;
+    }
+
+    public static void setSc(Scanner sc) {
+        ProgramMagangCaseMethod.sc = sc;
+    }
+
+    public static String[][] getDataMahasiswa() {
+        return dataMahasiswa;
+    }
+
+    public static void setDataMahasiswa(String[][] dataMahasiswa) {
+        ProgramMagangCaseMethod.dataMahasiswa = dataMahasiswa;
+    }
+
+    public static int getJumlahData() {
+        return jumlahData;
+    }
+
+    public static void setJumlahData(int jumlahData) {
+        ProgramMagangCaseMethod.jumlahData = jumlahData;
+    }
+
+    @Override
+    public String toString() {
+        return "ProgramMagangCaseMethod []";
     }
 }
 
