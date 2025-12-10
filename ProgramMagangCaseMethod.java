@@ -58,9 +58,9 @@ public class ProgramMagangCaseMethod {
                 searchData=true;
                 System.out.printf("%-10s %-20s %-20s %-25s %-25s %-10s %-15s \n", + (i+1) , dataMahasiswa[i][0] , dataMahasiswa[i][1] , dataMahasiswa[i][2] , dataMahasiswa[i][3] , dataMahasiswa[i][4] , dataMahasiswa[i][5]);
             }
-            if (searchData == false) { //Jika tidak ketemu
+        }
+        if (searchData == false) { //Jika tidak ketemu
                 System.out.println("Mahasiswa atau Data Pendaftar tidak ditemukan!");
-            }
         }
     }
     static void hitungJumlahPendaftarPerStatus() { // Function Menu 4 Untuk Menghitung Jumlah Pendaftar Magang Per Status
@@ -112,7 +112,7 @@ public class ProgramMagangCaseMethod {
                 break;
             }
         }
- 
+
     }
 }
 
