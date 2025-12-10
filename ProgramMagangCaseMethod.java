@@ -67,7 +67,6 @@ public class ProgramMagangCaseMethod {
         int diterima = 0;
         int menunggu = 0;
         int ditolak = 0;
-        String status;
 
         for (int i = 0; i < jumlahData; i++) {
             if (dataMahasiswa[i][5].equalsIgnoreCase("Diterima")){
