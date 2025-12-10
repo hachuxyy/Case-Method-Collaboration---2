@@ -48,6 +48,22 @@ public class ProgramMagangCaseMethod {
         }
     }
 
+    static void cariPendaftar() { //Function Menu 3 Untuk Mencari Pendaftar Magang
+        System.out.print("Masukkkan program studi: ");
+        String searching = sc.nextLine();
+        boolean searchData = false;
+        System.out.printf("%-10s %-20s %-20s %-25s %-25s %-10s %-15s \n", "No", "Nama", "NIM", "Program Studi", "Perusahaan", "Semester", "Status" );
+        for(int i=0; i<jumlahData; i++){
+            if (dataMahasiswa[i][2].equalsIgnoreCase(searching)){ //Jika ketemu
+                searchData=true;
+                System.out.printf("%-10s %-20s %-20s %-25s %-25s %-10s %-15s \n", + (i+1) , dataMahasiswa[i][0] , dataMahasiswa[i][1] , dataMahasiswa[i][2] , dataMahasiswa[i][3] , dataMahasiswa[i][4] , dataMahasiswa[i][5]);
+            }
+            if (searchData == false) { //Jika tidak ketemu
+                System.out.println("Mahasiswa atau Data Pendaftar tidak ditemukan!");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         while (true) { 
             System.out.println("==== Sistem Pendaftaran Magang Mahasiswa ====");
@@ -64,6 +80,8 @@ public class ProgramMagangCaseMethod {
                 tambahDataMagang();
             } else if (pilihMenu == 2) {
                 tampilSemuaPendaftar();
+            } else if (pilihMenu == 3) {
+                cariPendaftar();
             }
         }
     }
