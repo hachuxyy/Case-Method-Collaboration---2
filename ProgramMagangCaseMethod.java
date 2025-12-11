@@ -100,19 +100,24 @@ public class ProgramMagangCaseMethod {
             int pilihMenu = sc.nextInt();
             sc.nextLine();
 
-                if(pilihMenu == 1) {
-                    tambahDataMagang();
-                } else if (pilihMenu == 2) {
-                    tampilSemuaPendaftar();
-                } else if (pilihMenu == 3) {
-                    cariPendaftar();
-                } else if (pilihMenu == 4) {
-                    hitungJumlahPendaftarPerStatus();
-                } else if (pilihMenu == 5){
-                    System.out.println("Keluar dari program ....");
-                    break;
-                } else {
-                    System.out.println("Menu Tidak tersedia !! Silahkan Input Menu Sesuai Pilihan !!!");
+                switch(pilihMenu) {
+                    case 1 :
+                        tambahDataMagang();
+                        break;
+                    case 2 :
+                        tampilSemuaPendaftar();
+                        break;
+                    case 3 :
+                        cariPendaftar();
+                        break;
+                    case 4 : 
+                        hitungJumlahPendaftarPerStatus();
+                        break;
+                    case 5 :
+                        System.out.println("Keluar dari program .....");
+                        return;
+                    default:
+                        System.out.println("Menu Tidak tersedia !! Silahkan Input Menu Sesuai Pilihan !!!");
                 }
         }
 
